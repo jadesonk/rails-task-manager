@@ -1,14 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h1><%= @task.title %></h1>
+      <h1>Create a new task!</h1>
 
-      <div class="task-detail__container">
-         <%= @task.details %>
-      </div>
-
-      <%= check_box_tag 'completed', 'completed', checked=@task.completed %> this task is
-      <%= @task.completed ? 'completed' : 'not completed' %>
+      <%= render 'form', task: @task %>
 
       <div>
         <%= link_to tasks_path do %>
