@@ -1,8 +1,16 @@
-<h1>List of all my tasks</h1>
-<ul>
-  <% @tasks.each do |task| %>
-    <li>
-      <%= task.title %> - <%= task.details %> [<%= task.completed %>]
-    </li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>List of all my tasks</h1>
+      <ul>
+        <% @tasks.each do |task| %>
+          <li>
+            <%= check_box_tag 'completed', 'completed', checked=task.completed %>
+            <%= link_to task.title, task_path(task) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
