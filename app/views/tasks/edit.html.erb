@@ -3,13 +3,7 @@
     <div class="col-12">
       <h1>edit your task!</h1>
 
-      <!-- <#%=  render 'form', task: @task %> -->
-      <%= simple_form_for(@task) do |f| %>
-        <%= f.input :title %>
-        <%= f.input :details %>
-        <%= f.input_field :completed, as: :boolean %> Completed
-        <%= f.submit class: 'btn btn-primary btn-block' %>
-      <% end %>
+      <%=  render 'form', task: @task %>
 
       <div>
         <%= link_to task_path(@task) do %>
